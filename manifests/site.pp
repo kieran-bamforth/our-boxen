@@ -88,3 +88,62 @@ node default {
     target => $boxen::config::repodir
   }
 }
+
+include vagrant
+
+include osx::global::disable_key_press_and_hold
+include osx::global::enable_keyboard_control_access
+include osx::global::enable_standard_function_keys
+include osx::global::expand_print_dialog
+include osx::global::expand_save_dialog
+
+include osx::dock::clear_dock
+
+include osx::finder::unhide_library
+
+include osx::disable_app_quarantine
+include osx::software_update
+
+class { 'osx::dock::position':
+    position => 'left'
+}
+
+include iterm2::stable
+
+include alfred
+
+include virtualbox
+
+include flux
+
+include onepassword
+
+include dropbox
+
+include shortcat
+
+include dash
+
+include chrome
+
+include phpstorm
+
+include sequel_pro
+
+include mou
+
+include spotify
+
+include zsh
+
+include gitx
+
+include tmux
+
+package { 'php54':
+  ensure => present,
+}
+
+package { 'php54-xdebug':
+  ensure => 'present'
+}
