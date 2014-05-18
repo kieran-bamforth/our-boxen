@@ -133,4 +133,4 @@ include zsh
 
 include gitx
 
-#include tmux
+include tmux
