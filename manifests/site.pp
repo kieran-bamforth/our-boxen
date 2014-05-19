@@ -111,13 +111,13 @@ include virtualbox
 
 include flux
 
-include onepassword
+#include onepassword
 
 include dropbox
 
 include shortcat
 
-include dash
+#include dash
 
 include chrome
 
@@ -190,17 +190,16 @@ file { '/usr/local/bin/subl':
 
 include slack
 
-include php::5_3_3
+include php::5_4_17
 
 include php::composer
 
 class { 'php::global':
-  version => '5.3.3'
+  version => '5.4.17'
 }
 
-php::extension::xdebug { 'xdebug for ${version}':
-  php => $version,
-  version => '5.3.3'
+php::extension::xdebug { 'xdebug for 5.4':
+  php => '5.4.17'
 }
 
 include wget
@@ -216,3 +215,5 @@ include pcre
 include libpng
 
 include mysql
+
+include harvest

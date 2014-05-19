@@ -57,6 +57,10 @@ github "stdlib",      "4.1.0", :repo => "puppetlabs/puppetlabs-stdlib"
 github "sudo",        "1.0.0"
 github "xquartz",     "1.1.1"
 
+
+# Optional/custom modules. There are tons available at
+# https://github.com/boxen.
+
 github "vagrant",        "3.0.9"
 github "osx",            "2.5.0"
 github "iterm2",         "1.0.4"
@@ -85,7 +89,5 @@ github "pkgconfig",      "1.0.0"
 github "pcre",           "1.0.0"
 github "libpng",         "1.0.0"
 github "mysql",          "1.2.0"
-
-# Optional/custom modules. There are tons available at
-# https://github.com/boxen.
+github "harvest",        "1.0.2"
 
