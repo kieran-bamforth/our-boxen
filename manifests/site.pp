@@ -206,6 +206,10 @@ php::extension::xdebug { 'xdebug for 5.4':
   php => '5.4.17'
 }
 
+php::extension::intl { 'intl for 5.4':
+  php => '5.4.17'
+}
+
 include wget
 
 include autoconf
