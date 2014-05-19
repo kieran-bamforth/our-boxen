@@ -189,3 +189,30 @@ file { '/usr/local/bin/subl':
 }
 
 include slack
+
+include php::5_3_3
+
+include php::composer
+
+class { 'php::global':
+  version => '5.3.3'
+}
+
+php::extension::xdebug { 'xdebug for ${version}':
+  php => $version,
+  version => '5.3.3'
+}
+
+include wget
+
+include autoconf
+
+include libtool
+
+include pkgconfig
+
+include pcre
+
+include libpng
+
+include mysql
