@@ -140,59 +140,52 @@ include sublime_text_2
 sublime_text_2::package { 'Emmet':
   source => 'sergeche/emmet-sublime'
 }
-
 sublime_text_2::package { 'Theme - Soda':
   source => 'buymeasoda/soda-theme'
 }
-
 sublime_text_2::package { 'SideBarEnhancements':
   source => 'titoBouzout/SideBarEnhancements'
 }
-
 sublime_text_2::package { 'HTML5':
   source => 'mrmartineau/HTML5'
 }
-
 sublime_text_2::package { 'SublimeCodeIntel':
   source => 'SublimeCodeIntel/SublimeCodeIntel'
 }
-
 sublime_text_2::package { 'BracketHighlighter':
   source => 'facelessuser/BracketHighlighter'
 }
-
 sublime_text_2::package { 'SASS':
   source => 'nathos/sass-textmate-bundle'
 }
-
 sublime_text_2::package { 'DocBlockr':
   source => 'spadgos/sublime-jsdocs'
 }
-
 sublime_text_2::package { 'SublimeREPL':
   source => 'wuub/SublimeREPL'
 }
-
 sublime_text_2::package { 'LiveReload':
   source => 'dz0ny/LiveReload-sublimetext2'
 }
-
 sublime_text_2::package { 'TrailingSpaces':
   source => 'SublimeText/TrailingSpaces'
 }
-
 sublime_text_2::package { 'FileDiffs':
   source => 'colinta/SublimeFileDiffs'
 }
-
 sublime_text_2::package { 'JSHint':
   source => 'uipoet/sublime-jshint'
 }
-
 sublime_text_2::package { 'Can I Use':
   source => 'Azd325/sublime-text-caniuse'
 }
-
 sublime_text_2::package { 'SublimeGit':
   source => 'SublimeGit/SublimeGit'
 }
+
+file { '/usr/local/bin/subl':
+   ensure => 'link',
+   target => '/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl',
+}
+
+include slack

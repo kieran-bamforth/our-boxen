@@ -76,7 +76,7 @@ github "zsh",            "1.0.0"
 github "gitx",           "1.2.0"
 github "tmux",           "1.0.2"
 github "sublime_text_2", "1.1.2"
-
+github "slack",          "1.0.5"
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
 
