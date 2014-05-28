@@ -90,4 +90,4 @@ github "pcre",           "1.0.0"
 github "libpng",         "1.0.0"
 github "mysql",          "1.2.0"
 github "harvest",        "1.0.2"
-
+github "skype",          "1.0.8"

@@ -225,3 +225,5 @@ include libpng
 include mysql
 
 include harvest
+
+include skype
