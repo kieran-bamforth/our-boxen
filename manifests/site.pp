@@ -227,3 +227,7 @@ include mysql
 include harvest
 
 include skype
+
+include vim
+
+include python

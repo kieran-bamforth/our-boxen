@@ -154,6 +154,11 @@ GITHUBTARBALL
     pkgconfig (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-python
+  specs:
+    python (1.1.1)
+
+GITHUBTARBALL
   remote: boxen/puppet-repository
   specs:
     repository (2.3.0)
@@ -207,6 +212,11 @@ GITHUBTARBALL
   remote: boxen/puppet-vagrant
   specs:
     vagrant (3.0.9)
+
+GITHUBTARBALL
+  remote: boxen/puppet-vim
+  specs:
+    vim (1.0.5)
 
 GITHUBTARBALL
   remote: boxen/puppet-virtualbox
@@ -278,6 +288,7 @@ DEPENDENCIES
   phpstorm (= 1.0.4)
   pkgconfig (= 1.0.0)
   pkgconfig (= 1.0.0)
+  python (= 1.1.1)
   repository (= 2.3.0)
   ruby (= 7.3.0)
   sequel_pro (= 1.0.1)
@@ -290,6 +301,7 @@ DEPENDENCIES
   sudo (= 1.0.0)
   tmux (= 1.0.2)
   vagrant (= 3.0.9)
+  vim (= 1.0.5)
   virtualbox (= 1.0.11)
   wget (= 1.0.1)
   xquartz (= 1.1.1)
