@@ -235,3 +235,10 @@ python::version { '2.7.6': }
 class { 'python::global':
   version => '2.7.6'
 }
+
+package { 'macvim':
+  ensure => present,
+  install_options => [
+    '--override-system-vim'
+  ],
+}
