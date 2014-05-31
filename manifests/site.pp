@@ -107,6 +107,10 @@ class { 'osx::dock::position':
     position => 'left'
 }
 
+class { 'osx::dock::icon_size':
+  size => 36
+}
+
 include iterm2::stable
 
 include alfred
