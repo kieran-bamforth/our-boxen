@@ -228,6 +228,10 @@ include harvest
 
 include skype
 
-include vim
+# Install Python versions
+python::version { '2.7.6': }
 
-include python
+# Set the global version of Python
+class { 'python::global':
+  version => '2.7.6'
+}
