@@ -242,3 +242,7 @@ package { 'macvim':
     '--override-system-vim'
   ],
 }
+
+package { 'ansible':
+  ensure => present,
+}
