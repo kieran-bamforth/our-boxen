@@ -70,6 +70,19 @@ node default {
     version => 'v0.10'
   }
 
+  nodejs::module { 'bower':
+    node_version => 'v0.10'
+  }
+  nodejs::module { 'grunt-cli':
+    node_version => 'v0.10'
+  }
+  nodejs::module { 'yo':
+    node_version => 'v0.10'
+  }
+  nodejs::module { 'generator-flight':
+    node_version => 'v0.10'
+  }
+
   # default ruby versions
   # ruby::version { '2.1.0': }
 
@@ -199,6 +212,8 @@ file { '/usr/local/bin/subl':
 include slack
 
 include php::5_4_17
+
+include php::5_3_27
 
 include php::composer
 
