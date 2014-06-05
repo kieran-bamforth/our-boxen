@@ -112,6 +112,7 @@ include osx::global::expand_save_dialog
 include osx::dock::clear_dock
 
 include osx::finder::unhide_library
+include osx::finder::show_hidden_files
 
 include osx::disable_app_quarantine
 include osx::software_update
