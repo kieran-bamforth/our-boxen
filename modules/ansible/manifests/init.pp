@@ -17,4 +17,12 @@ class ansible {
         source => 'puppet:///modules/ansible/ec2.py',
         mode => 755
     }
+
+    file { '/etc/ansible/ec2.ini':
+        ensure => 'present',
+        owner => 'kieran',
+        group => 'staff',
+        source => 'puppet:///modules/ansible/ec2.ini',
+        mode => 755
+    }
 }
