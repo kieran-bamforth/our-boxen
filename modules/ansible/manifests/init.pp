@@ -14,7 +14,7 @@ class ansible {
         ensure => 'present',
         owner => 'kieran',
         group => 'staff',
-        target => 'puppet://modules/ansible/ec2.py',
+        source => 'puppet:///modules/ansible/ec2.py',
         mode => 755
     }
 }
