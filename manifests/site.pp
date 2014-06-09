@@ -186,9 +186,6 @@ sublime_text_2::package { 'DocBlockr':
 sublime_text_2::package { 'SublimeREPL':
   source => 'wuub/SublimeREPL'
 }
-sublime_text_2::package { 'LiveReload':
-  source => 'dz0ny/LiveReload-sublimetext2'
-}
 sublime_text_2::package { 'TrailingSpaces':
   source => 'SublimeText/TrailingSpaces'
 }
