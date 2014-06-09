@@ -263,13 +263,4 @@ package { 'macvim':
   ],
 }
 
-package { 'ansible':
-  ensure => present,
-}
-
-file { ["/etc/ansible", "/etc/ansible/hosts", ]:
-    ensure => "directory",
-    owner  => "kieran",
-    group  => "staff",
-    mode   => 755,
-}
+include ansible
