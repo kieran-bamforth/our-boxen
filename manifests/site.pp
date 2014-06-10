@@ -264,3 +264,5 @@ package { 'macvim':
 }
 
 include ansible
+
+include evernote

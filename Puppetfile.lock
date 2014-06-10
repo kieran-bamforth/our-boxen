@@ -224,6 +224,11 @@ GITHUBTARBALL
     zsh (1.0.0)
 
 GITHUBTARBALL
+  remote: jasonamyers/puppet-evernote
+  specs:
+    evernote (2.0.6)
+
+GITHUBTARBALL
   remote: kieran-bamforth/puppet-tmux
   specs:
     tmux (1.0.5)
@@ -256,6 +261,7 @@ DEPENDENCIES
   dash (= 1.0.0)
   dnsmasq (= 1.0.1)
   dropbox (= 1.2.0)
+  evernote (= 2.0.6)
   flux (= 1.0.1)
   foreman (= 1.2.0)
   gcc (= 2.0.100)
