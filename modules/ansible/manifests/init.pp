@@ -18,7 +18,7 @@ class ansible {
         mode => 755
     }
 
-    file { '/etc/ansible/ec2.ini':
+    file { '/etc/ansible/plugins/inventory/ec2.ini':
         ensure => 'present',
         owner => 'kieran',
         group => 'staff',
