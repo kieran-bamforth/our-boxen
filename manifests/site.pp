@@ -201,6 +201,9 @@ sublime_text_2::package { 'Can I Use':
 sublime_text_2::package { 'SublimeGit':
   source => 'SublimeGit/SublimeGit'
 }
+sublime_text_2::package { 'PHP-Twig.tmbundle':
+  source => 'Anomareh/PHP-Twig.tmbundle' 
+}
 sublime_text_2::package { 'sublime-jslint':
   source => 'fbzhong/sublime-jslint'
 }
@@ -266,3 +269,7 @@ package { 'macvim':
 include ansible
 
 include evernote
+
+include induction
+
+include firefox
