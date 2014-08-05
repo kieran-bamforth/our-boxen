@@ -82,6 +82,9 @@ node default {
   nodejs::module { 'generator-flight':
     node_version => 'v0.10'
   }
+  nodejs::module {'node-inspector':
+    node_version => 'v0.10'
+  }
 
   # default ruby versions
   ruby::version { '2.1.0': }
