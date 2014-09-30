@@ -88,6 +88,8 @@ node default {
 
   # default ruby versions
   ruby::version { '2.1.0': }
+  ruby::version { '2.1.1': }
+  ruby::version { '2.1.2': }
 
   # common, useful packages
   package {
@@ -221,8 +223,6 @@ include slack
 include php::5_5_9
 
 include php::5_4_17
-
-include php::5_3_27
 
 include php::composer
 
