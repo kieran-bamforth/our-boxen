@@ -252,8 +252,6 @@ include libpng
 
 include mysql
 
-include harvest
-
 include skype
 
 # Install Python versions
