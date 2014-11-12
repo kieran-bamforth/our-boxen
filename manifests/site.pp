@@ -283,3 +283,5 @@ service {"dev.nginx":
 service {"dev.dnsmasq":
     ensure => "stopped",
 }
+
+include vagrant_manager
