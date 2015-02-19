@@ -206,10 +206,13 @@ sublime_text_2::package { 'SublimeGit':
   source => 'SublimeGit/SublimeGit'
 }
 sublime_text_2::package { 'PHP-Twig.tmbundle':
-  source => 'Anomareh/PHP-Twig.tmbundle' 
+  source => 'Anomareh/PHP-Twig.tmbundle'
 }
 sublime_text_2::package { 'sublime-jslint':
   source => 'fbzhong/sublime-jslint'
+}
+sublime_text_2::package { 'sublime-text-puppet':
+  source => 'eklein/sublime-text-puppet'
 }
 
 file { '/usr/local/bin/subl':
@@ -261,13 +264,6 @@ class { 'python::global':
   version => '2.7.6'
 }
 
-package { 'macvim':
-  ensure => present,
-  install_options => [
-    '--override-system-vim'
-  ],
-}
-
 include ansible
 
 include evernote
@@ -285,3 +281,15 @@ service {"dev.dnsmasq":
 }
 
 include vagrant_manager
+
+include vim
+
+vim::bundle { [
+  'scrooloose/syntastic',
+  'sjl/gundo.vim',
+  'elzr/vim-json',
+  'altercation/vim-colors-solarized',
+  'tpope/vim-commentary',
+  'scrooloose/nerdtree',
+  'tpope/vim-fugitive'
+]: }
