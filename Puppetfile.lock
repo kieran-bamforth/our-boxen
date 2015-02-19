@@ -149,11 +149,6 @@ GITHUBTARBALL
     phantomjs (2.3.0)
 
 GITHUBTARBALL
-  remote: boxen/puppet-php
-  specs:
-    php (1.2.5)
-
-GITHUBTARBALL
   remote: boxen/puppet-phpstorm
   specs:
     phpstorm (1.0.6)
@@ -247,6 +242,11 @@ GITHUBTARBALL
   remote: jasonamyers/puppet-evernote
   specs:
     evernote (2.0.6)
+
+GITHUBTARBALL
+  remote: kieran-bamforth/puppet-php
+  specs:
+    php (1.2.5)
 
 GITHUBTARBALL
   remote: kieran-bamforth/puppet-tmux
