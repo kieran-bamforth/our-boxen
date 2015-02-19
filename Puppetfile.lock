@@ -251,7 +251,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: kieran-bamforth/puppet-php
   specs:
-    php (1.2.5)
+    php (1.2.7)
 
 GITHUBTARBALL
   remote: kieran-bamforth/puppet-tmux
@@ -313,7 +313,7 @@ DEPENDENCIES
   osx (= 2.5.0)
   pcre (= 1.0.0)
   phantomjs (= 2.3.0)
-  php (= 1.2.5)
+  php (= 1.2.7)
   phpstorm (= 1.0.6)
   pkgconfig (= 1.0.0)
   pkgconfig (= 1.0.0)
