@@ -18,7 +18,6 @@ GITHUBTARBALL
   specs:
     brewcask (0.0.4)
 
-
 GITHUBTARBALL
   remote: boxen/puppet-chrome
   specs:
@@ -282,10 +281,9 @@ GITHUBTARBALL
 DEPENDENCIES
   alfred (= 1.1.8)
   autoconf (= 1.0.0)
-boxen (= 3.10.1)
+  boxen (= 3.10.1)
   brewcask (= 0.0.4)
-chrome (= 1.1.2)
-
+  chrome (= 1.1.2)
   dash (= 1.0.0)
   dnsmasq (= 2.0.1)
   dropbox (= 1.2.0)

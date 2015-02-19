@@ -63,12 +63,14 @@ node default {
     fail('Please enable full disk encryption and try again')
   }
 
-  # node versions
-  include nodejs::v0_10
+  # include short version aliases
+  nodejs::version { 'v0.10': }
 
-  class { 'nodejs::global':
-    version => 'v0.10'
-  }
+  # install any arbitrary nodejs version
+  nodejs::version { 'v0.10.0': }
+
+  # set the global nodejs version
+  class { 'nodejs::global': version => 'v0.10.0' }
 
   nodejs::module { 'bower':
     node_version => 'v0.10'
