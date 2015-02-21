@@ -63,29 +63,26 @@ node default {
     fail('Please enable full disk encryption and try again')
   }
 
-  # include short version aliases
-  nodejs::version { 'v0.10': }
-
   # install any arbitrary nodejs version
-  nodejs::version { 'v0.10.0': }
+  nodejs::version { 'v0.12.0': }
 
   # set the global nodejs version
-  class { 'nodejs::global': version => 'v0.10.0' }
+  class { 'nodejs::global': version => 'v0.12.0' }
 
   nodejs::module { 'bower':
-    node_version => 'v0.10'
+    node_version => 'v0.12.0'
   }
   nodejs::module { 'grunt-cli':
-    node_version => 'v0.10'
+    node_version => 'v0.12.0'
   }
   nodejs::module { 'yo':
-    node_version => 'v0.10'
+    node_version => 'v0.12.0'
   }
   nodejs::module { 'generator-flight':
-    node_version => 'v0.10'
+    node_version => 'v0.12.0'
   }
   nodejs::module {'node-inspector':
-    node_version => 'v0.10'
+    node_version => 'v0.12.0'
   }
 
   # default ruby versions
@@ -293,5 +290,6 @@ vim::bundle { [
   'altercation/vim-colors-solarized',
   'tpope/vim-commentary',
   'scrooloose/nerdtree',
-  'tpope/vim-fugitive'
+  'tpope/vim-fugitive',
+  'Lokaltog/vim-easymotion'
 ]: }
