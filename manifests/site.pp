@@ -221,9 +221,8 @@ file { '/usr/local/bin/subl':
 
 include slack
 
-include php::5_5_9
-
-include php::5_4_17
+php::version { '5.5.9': }
+php::version { '5.4.17': }
 
 include php::composer
 
