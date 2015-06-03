@@ -228,7 +228,7 @@ include php::5_4_17
 include php::composer
 
 class { 'php::global':
-  version => '5.4.17'
+  version => '5.5.9'
 }
 
 php::extension::xdebug { 'xdebug for 5.4':
@@ -237,6 +237,14 @@ php::extension::xdebug { 'xdebug for 5.4':
 
 php::extension::intl { 'intl for 5.4':
   php => '5.4.17'
+}
+
+php::extension::xdebug { 'xdebug for 5.5.9':
+  php => '5.5.9'
+}
+
+php::extension::intl { 'intl for 5.5.9':
+  php => '5.5.9'
 }
 
 include wget
