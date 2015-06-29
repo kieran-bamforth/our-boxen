@@ -56,7 +56,7 @@ node default {
   #include dnsmasq
   include git
   include hub
-  #include nginx
+  include nginx
 
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
@@ -238,9 +238,9 @@ php::extension::intl { 'intl for 5.4':
   php => '5.4.17'
 }
 
-php::extension::xdebug { 'xdebug for 5.5.9':
-  php => '5.5.9'
-}
+#php::extension::xdebug { 'xdebug for 5.5.9':
+#  php => '5.5.9'
+#}
 
 php::extension::intl { 'intl for 5.5.9':
   php => '5.5.9'
@@ -278,13 +278,13 @@ include induction
 
 include firefox
 
-service {"dev.nginx":
-    ensure => "stopped",
-}
+#service {"dev.nginx":
+#    ensure => "started",
+#}
 
-service {"dev.dnsmasq":
-    ensure => "stopped",
-}
+#service {"dev.dnsmasq":
+#    ensure => "stopped",
+#}
 
 include vagrant_manager
 
@@ -300,3 +300,5 @@ vim::bundle { [
   'tpope/vim-fugitive',
   'Lokaltog/vim-easymotion'
 ]: }
+
+class { 'projects::mediatank': }
