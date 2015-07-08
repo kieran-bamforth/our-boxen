@@ -300,5 +300,3 @@ vim::bundle { [
   'tpope/vim-fugitive',
   'Lokaltog/vim-easymotion'
 ]: }
-
-class { 'projects::mediatank': }
