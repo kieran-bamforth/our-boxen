@@ -39,6 +39,11 @@ GITHUBTARBALL
     dropbox (1.2.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-elasticsearch
+  specs:
+    elasticsearch (2.8.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-firefox
   specs:
     firefox (1.2.1)
@@ -287,6 +292,7 @@ DEPENDENCIES
   dash (= 1.0.0)
   dnsmasq (= 2.0.1)
   dropbox (= 1.2.0)
+  elasticsearch (= 2.8.0)
   evernote (= 2.0.6)
   firefox (= 1.2.1)
   flux (= 1.0.1)
