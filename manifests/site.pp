@@ -300,3 +300,5 @@ vim::bundle { [
   'tpope/vim-fugitive',
   'Lokaltog/vim-easymotion'
 ]: }
+
+include elasticsearch
