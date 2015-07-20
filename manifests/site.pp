@@ -302,3 +302,5 @@ vim::bundle { [
 ]: }
 include java
 include elasticsearch
+
+mysql::db {'mydb':}
