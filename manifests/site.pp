@@ -52,255 +52,110 @@ Service {
 Homebrew::Formula <| |> -> Package <| |>
 
 node default {
-  # core modules, needed for most things
-  #include dnsmasq
-  include git
-  include hub
-  #include nginx
-
-  # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
     fail('Please enable full disk encryption and try again')
   }
-
-  # install any arbitrary nodejs version
-  nodejs::version { 'v0.12.0': }
-
-  # set the global nodejs version
-  class { 'nodejs::global': version => 'v0.12.0' }
-
-  nodejs::module { 'bower':
-    node_version => 'v0.12.0'
-  }
-  nodejs::module { 'grunt-cli':
-    node_version => 'v0.12.0'
-  }
-  nodejs::module { 'yo':
-    node_version => 'v0.12.0'
-  }
-  nodejs::module { 'generator-flight':
-    node_version => 'v0.12.0'
-  }
-  nodejs::module {'node-inspector':
-    node_version => 'v0.12.0'
-  }
-
-  # default ruby versions
-  ruby::version { '2.1.0': }
-  ruby::version { '2.1.1': }
-  ruby::version { '2.1.2': }
-
-  # common, useful packages
-  package {
-    [
+  package { [
       'ack',
       'findutils',
       'gnu-tar'
-    ]:
-  }
+  ]: }
 
   file { "${boxen::config::srcdir}/our-boxen":
     ensure => link,
     target => $boxen::config::repodir
   }
+
+  file { '/usr/local/bin/subl':
+     ensure => 'link',
+     target => '/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl',
+  }
+
+  include alfred
+  include ansible
+  include autoconf
+  include chrome
+  # include dnsmasq
+  include dropbox
+  include elasticsearch
+  include evernote
+  include firefox
+  include flux
+  include git
+  include gitx
+  include hub
+  include iterm2::colors::solarized_dark
+  include iterm2::stable
+  include java
+  include libpng
+  include libtool
+
+  include mysql
+  mysql::db {'mydb':}
+  # include nginx
+
+  nodejs::version { '0.12.0': }
+  npm_module { "bower for 0.12": module => 'bower', version => '~> 1.4.1', node_version => '0.12.0' }
+  npm_module { "yo for 0.12": module => 'yo', version => '~> 1.4.7', node_version => '0.12.0' }
+  npm_module { "node inspector for 0.12": module => 'node-inspector', version => '~> 0.12.1', node_version => '0.12.0' }
+  class { 'nodejs::global': version => '0.12.0' }
+
+  include osx::disable_app_quarantine
+  include osx::dock::clear_dock
+  include osx::finder::unhide_library
+  include osx::global::disable_key_press_and_hold
+  include osx::global::enable_keyboard_control_access
+  include osx::global::enable_standard_function_keys
+  include osx::global::expand_print_dialog
+  include osx::global::expand_save_dialog
+  include osx::software_update
+  class { 'osx::dock::position': position => 'left'}
+  class { 'osx::dock::icon_size': size => 36}
+
+  include pcre
+
+  class { 'php::global': version => '5.6.9'}
+  include php::composer
+  # php::extension::intl { 'intl for 5.6.9': php => '5.6.9'}
+  # php::extension::xdebug { 'xdebug for 5.6.9': php => '5.6.9'}
+
+  include phpstorm
+  include pkgconfig
+
+  python::version { '2.7.6': }
+  class { 'python::global': version => '2.7.6' }
+
+  ruby::version { '2.0.0': }
+  ruby::version { '2.1.0': }
+
+  include sequel_pro
+  include skype
+  include spotify
+
+  include sublime_text_2
+  sublime_text_2::package { 'BracketHighlighter': source => 'facelessuser/BracketHighlighter' }
+  sublime_text_2::package { 'HTML5': source => 'mrmartineau/HTML5' }
+  sublime_text_2::package { 'SideBarEnhancements': source => 'titoBouzout/SideBarEnhancements' }
+  sublime_text_2::package { 'sublime-text-puppet': source => 'eklein/sublime-text-puppet' }
+  sublime_text_2::package { 'TrailingSpaces': source => 'SublimeText/TrailingSpaces' }
+
+  include tmux
+  class { 'vagrant': completion => true }
+  include vagrant_manager
+
+  include vim
+  vim::bundle { [
+    'altercation/vim-colors-solarized',
+    'elzr/vim-json',
+    'Lokaltog/vim-easymotion',
+    'scrooloose/nerdtree',
+    'scrooloose/syntastic',
+    'sjl/gundo.vim',
+    'tpope/vim-commentary',
+    'tpope/vim-fugitive'
+  ]: }
+
+  include virtualbox
+  include wget
+  include zsh
 }
-
-include vagrant
-
-include osx::global::disable_key_press_and_hold
-include osx::global::enable_keyboard_control_access
-include osx::global::enable_standard_function_keys
-include osx::global::expand_print_dialog
-include osx::global::expand_save_dialog
-
-include osx::dock::clear_dock
-
-include osx::finder::unhide_library
-
-include osx::disable_app_quarantine
-include osx::software_update
-
-class { 'osx::dock::position':
-    position => 'left'
-}
-
-class { 'osx::dock::icon_size':
-  size => 36
-}
-
-include iterm2::stable
-
-include alfred
-
-include virtualbox
-
-include flux
-
-#include onepassword
-
-include dropbox
-
-include shortcat
-
-#include dash
-
-include chrome
-
-include phpstorm
-
-include sequel_pro
-
-include mou
-
-include spotify
-
-include zsh
-
-include gitx
-
-include tmux
-
-include sublime_text_2
-
-sublime_text_2::package { 'Emmet':
-  source => 'sergeche/emmet-sublime'
-}
-sublime_text_2::package { 'Theme - Soda':
-  source => 'buymeasoda/soda-theme'
-}
-sublime_text_2::package { 'SideBarEnhancements':
-  source => 'titoBouzout/SideBarEnhancements'
-}
-sublime_text_2::package { 'HTML5':
-  source => 'mrmartineau/HTML5'
-}
-sublime_text_2::package { 'SublimeCodeIntel':
-  source => 'SublimeCodeIntel/SublimeCodeIntel'
-}
-sublime_text_2::package { 'BracketHighlighter':
-  source => 'facelessuser/BracketHighlighter'
-}
-sublime_text_2::package { 'SASS':
-  source => 'nathos/sass-textmate-bundle'
-}
-sublime_text_2::package { 'DocBlockr':
-  source => 'spadgos/sublime-jsdocs'
-}
-sublime_text_2::package { 'SublimeREPL':
-  source => 'wuub/SublimeREPL'
-}
-sublime_text_2::package { 'TrailingSpaces':
-  source => 'SublimeText/TrailingSpaces'
-}
-sublime_text_2::package { 'FileDiffs':
-  source => 'colinta/SublimeFileDiffs'
-}
-sublime_text_2::package { 'JSHint':
-  source => 'uipoet/sublime-jshint'
-}
-sublime_text_2::package { 'Can I Use':
-  source => 'Azd325/sublime-text-caniuse'
-}
-sublime_text_2::package { 'SublimeGit':
-  source => 'SublimeGit/SublimeGit'
-}
-sublime_text_2::package { 'PHP-Twig.tmbundle':
-  source => 'Anomareh/PHP-Twig.tmbundle'
-}
-sublime_text_2::package { 'sublime-jslint':
-  source => 'fbzhong/sublime-jslint'
-}
-sublime_text_2::package { 'sublime-text-puppet':
-  source => 'eklein/sublime-text-puppet'
-}
-
-file { '/usr/local/bin/subl':
-   ensure => 'link',
-   target => '/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl',
-}
-
-include slack
-
-php::version { '5.5.9': }
-php::version { '5.4.17': }
-
-include php::composer
-
-class { 'php::global':
-  version => '5.5.9'
-}
-
-php::extension::xdebug { 'xdebug for 5.4':
-  php => '5.4.17'
-}
-
-php::extension::intl { 'intl for 5.4':
-  php => '5.4.17'
-}
-
-#php::extension::xdebug { 'xdebug for 5.5.9':
-#  php => '5.5.9'
-#}
-
-php::extension::intl { 'intl for 5.5.9':
-  php => '5.5.9'
-}
-
-include wget
-
-include autoconf
-
-include libtool
-
-include pkgconfig
-
-include pcre
-
-include libpng
-
-include mysql
-
-include skype
-
-# Install Python versions
-python::version { '2.7.6': }
-
-# Set the global version of Python
-class { 'python::global':
-  version => '2.7.6'
-}
-
-include ansible
-
-include evernote
-
-include induction
-
-include firefox
-
-#service {"dev.nginx":
-#    ensure => "started",
-#}
-
-#service {"dev.dnsmasq":
-#    ensure => "stopped",
-#}
-
-include vagrant_manager
-
-include vim
-
-vim::bundle { [
-  'scrooloose/syntastic',
-  'sjl/gundo.vim',
-  'elzr/vim-json',
-  'altercation/vim-colors-solarized',
-  'tpope/vim-commentary',
-  'scrooloose/nerdtree',
-  'tpope/vim-fugitive',
-  'Lokaltog/vim-easymotion'
-]: }
-include java
-include elasticsearch
-
-mysql::db {'mydb':}
