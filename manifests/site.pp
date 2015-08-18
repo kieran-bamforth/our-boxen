@@ -92,6 +92,7 @@ node default {
 
   include mysql
   mysql::db {'mydb':}
+  mysql::db {'mediatank-datawarehouse':}
   # include nginx
 
   nodejs::version { '0.12.0': }
