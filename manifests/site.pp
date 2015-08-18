@@ -90,6 +90,7 @@ node default {
   include libpng
   include libtool
 
+  include memcached
   include mysql
   mysql::db {'mydb':}
   mysql::db {'mediatank-datawarehouse':}

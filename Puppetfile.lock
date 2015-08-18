@@ -104,6 +104,11 @@ GITHUBTARBALL
     libtool (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-memcached
+  specs:
+    memcached (2.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-mysql
   specs:
     mysql (2.1.2)
@@ -277,6 +282,7 @@ DEPENDENCIES
   java (= 1.8.3)
   libpng (= 1.0.0)
   libtool (= 1.0.0)
+  memcached (= 2.0.0)
   module_data (= 0.0.3)
   mysql (= 2.1.2)
   nginx (= 1.4.6)
