@@ -97,7 +97,7 @@ node default {
   mysql::db {'mediatank-identity':}
   mysql::db {'mediatank-assets':}
   mysql::db {'wrapitin':}
-  mysql::db {'es6-example':}
+  mysql::db {'es6_example':}
   # include nginx
 
   nodejs::version { '0.12.0': }
