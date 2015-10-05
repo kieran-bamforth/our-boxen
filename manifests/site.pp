@@ -98,6 +98,7 @@ node default {
   mysql::db {'mediatank-assets':}
   mysql::db {'wrapitin':}
   mysql::db {'es6_example':}
+  mysql::db {'skylab_website':}
   # include nginx
 
   nodejs::version { '0.12.0': }
@@ -105,6 +106,9 @@ node default {
   npm_module { "yo for 0.12": module => 'yo', version => '~> 1.4.7', node_version => '0.12.0' }
   npm_module { "node inspector for 0.12": module => 'node-inspector', version => '~> 0.12.1', node_version => '0.12.0' }
   npm_module { "git commander for 0.12": module => 'git-commander', version => '~> 0.0.12', node_version => '0.12.0' }
+  npm_module { "grunt for 0.12": module => 'grunt', version => '~> 0.4.5', node_version => '0.12.0' }
+  npm_module { "grunt-cli for 0.12": module => 'grunt-cli', version => '~> 0.1.13', node_version => '0.12.0' }
+  npm_module { "ract-native-cli for 0.12": module => 'react-native-cli', version => '~> 0.1.4', node_version => '0.12.0' }
   class { 'nodejs::global': version => '0.12.0' }
 
   include osx::disable_app_quarantine
