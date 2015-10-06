@@ -99,6 +99,7 @@ node default {
   mysql::db {'wrapitin':}
   mysql::db {'es6_example':}
   mysql::db {'skylab_website':}
+  mysql::db {'swimming':}
   # include nginx
 
   nodejs::version { '0.12.0': }
@@ -145,7 +146,6 @@ node default {
 
   include sublime_text_2
   sublime_text_2::package { 'BracketHighlighter': source => 'facelessuser/BracketHighlighter' }
-  sublime_text_2::package { 'HTML5': source => 'mrmartineau/HTML5' }
   sublime_text_2::package { 'SideBarEnhancements': source => 'titoBouzout/SideBarEnhancements' }
   sublime_text_2::package { 'sublime-text-puppet': source => 'eklein/sublime-text-puppet' }
   sublime_text_2::package { 'TrailingSpaces': source => 'SublimeText/TrailingSpaces' }
