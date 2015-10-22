@@ -77,6 +77,7 @@ node default {
   include chrome
   # include dnsmasq
   include dropbox
+  include docker
   include elasticsearch
   include evernote
   include firefox

@@ -29,11 +29,11 @@ end
 # Includes many of our custom types and providers, as well as global
 # config. Required.
 
-github "boxen", "3.10.4"
+github "boxen", "3.11.0"
 
 # Support for default hiera data in modules
 
-github "module_data", "0.0.3", :repo => "ripienaar/puppet-module-data"
+github "module_data", "0.0.4", :repo => "ripienaar/puppet-module-data"
 
 # Core modules for a basic development environment. You can replace
 # some/most of these if you want, but it's not recommended.
@@ -54,17 +54,18 @@ github "phantomjs",   "3.0.0"
 github "pkgconfig",   "1.0.0"
 github "repository",  "2.4.1"
 github "ruby",        "8.5.2"
-github "stdlib",      "4.2.2", :repo => "puppetlabs/puppetlabs-stdlib"
+github "stdlib",      "4.7.0", :repo => "puppetlabs/puppetlabs-stdlib"
 github "sudo",        "1.0.0"
 github "xquartz",     "1.2.1"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
 
-github "alfred",          "1.5.0"
-github "autoconf",        "1.0.0"
-github "chrome",          "1.2.0"
-github "dropbox",         "1.4.1"
+github "alfred",         "1.5.0"
+github "autoconf",       "1.0.0"
+github "chrome",         "1.2.0"
+github "docker",         "1.0.0"
+github "dropbox",        "1.4.1"
 github "elasticsearch",  "2.8.0"
 github "evernote",       "2.0.6", :repo => "jasonamyers/puppet-evernote"
 github "firefox",        "1.2.3"

@@ -11,7 +11,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-boxen
   specs:
-    boxen (3.10.4)
+    boxen (3.11.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-brewcask
@@ -27,6 +27,11 @@ GITHUBTARBALL
   remote: boxen/puppet-dnsmasq
   specs:
     dnsmasq (2.0.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-docker
+  specs:
+    docker (1.0.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-dropbox
@@ -251,20 +256,21 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-stdlib
   specs:
-    stdlib (4.2.2)
+    stdlib (4.7.0)
 
 GITHUBTARBALL
   remote: ripienaar/puppet-module-data
   specs:
-    module_data (0.0.3)
+    module_data (0.0.4)
 
 DEPENDENCIES
   alfred (= 1.5.0)
   autoconf (= 1.0.0)
-  boxen (= 3.10.4)
+  boxen (= 3.11.0)
   brewcask (= 0.0.6)
   chrome (= 1.2.0)
   dnsmasq (= 2.0.1)
+  docker (= 1.0.0)
   dropbox (= 1.4.1)
   elasticsearch (= 2.8.0)
   evernote (= 2.0.6)
@@ -283,7 +289,7 @@ DEPENDENCIES
   libpng (= 1.0.0)
   libtool (= 1.0.0)
   memcached (= 2.0.0)
-  module_data (= 0.0.3)
+  module_data (= 0.0.4)
   mysql (= 2.1.2)
   nginx (= 1.4.6)
   nodejs (= 5.0.0)
@@ -301,7 +307,7 @@ DEPENDENCIES
   sequel_pro (= 1.0.1)
   skype (= 1.1.0)
   spotify (= 1.0.2)
-  stdlib (= 4.2.2)
+  stdlib (= 4.7.0)
   sublime_text_2 (= 1.1.2)
   sudo (= 1.0.0)
   tmux (= 1.0.7)
