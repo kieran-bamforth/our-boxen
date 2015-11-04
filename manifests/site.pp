@@ -111,6 +111,7 @@ node default {
   npm_module { "grunt for 0.12": module => 'grunt', version => '~> 0.4.5', node_version => '0.12.0' }
   npm_module { "grunt-cli for 0.12": module => 'grunt-cli', version => '~> 0.1.13', node_version => '0.12.0' }
   npm_module { "ract-native-cli for 0.12": module => 'react-native-cli', version => '~> 0.1.4', node_version => '0.12.0' }
+  npm_module { "tern for 0.12": module => 'tern', version => '~> 0.16.0', node_version => '0.12.0' }
   class { 'nodejs::global': version => '0.12.0' }
 
   include osx::disable_app_quarantine
@@ -147,9 +148,9 @@ node default {
 
   include sublime_text_2
   sublime_text_2::package { 'BracketHighlighter': source => 'facelessuser/BracketHighlighter' }
-  sublime_text_2::package { 'SideBarEnhancements': source => 'titoBouzout/SideBarEnhancements' }
   sublime_text_2::package { 'sublime-text-puppet': source => 'eklein/sublime-text-puppet' }
   sublime_text_2::package { 'TrailingSpaces': source => 'SublimeText/TrailingSpaces' }
+  sublime_text_2::package { 'material-theme': source => 'equinusocio/material-theme' }
 
   include tmux
   class { 'vagrant': completion => true }
