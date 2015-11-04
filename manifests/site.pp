@@ -153,6 +153,7 @@ node default {
   sublime_text_3::package { 'Material Theme': source => 'equinusocio/material-theme' }
   sublime_text_3::package { 'Sublime-HTMLPrettify': source => 'victorporof/Sublime-HTMLPrettify'}
   sublime_text_3::package { 'sublime-text-puppet': source => 'eklein/sublime-text-puppet' }
+  sublime_text_3::package { 'tern-meteor-sublime': source => 'Slava/tern-meteor-sublime' }
   sublime_text_3::package { 'TrailingSpaces': source => 'SublimeText/TrailingSpaces' }
 
 
