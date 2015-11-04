@@ -151,6 +151,7 @@ node default {
   sublime_text_2::package { 'sublime-text-puppet': source => 'eklein/sublime-text-puppet' }
   sublime_text_2::package { 'TrailingSpaces': source => 'SublimeText/TrailingSpaces' }
   sublime_text_2::package { 'material-theme': source => 'equinusocio/material-theme' }
+  sublime_text_2::package { 'tern_for_sublime': source => 'ternjs/tern_for_sublime'}
 
   include tmux
   class { 'vagrant': completion => true }
