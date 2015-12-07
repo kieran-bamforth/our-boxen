@@ -74,6 +74,7 @@ node default {
   include alfred
   include ansible
   include autoconf
+  include autojump
   include chrome
   # include dnsmasq
   include dropbox
