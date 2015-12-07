@@ -2,6 +2,8 @@
 class people::kieran_bamforth {
 
   $home     = "/Users/${::boxen_user}"
+
+  # Dotfiles
   $dotfiles = "${home}/dotfiles"
   $dftmux = "${home}/.tmux.conf"
   $dfvimrc = "${home}/.vimrc"
@@ -32,5 +34,17 @@ class people::kieran_bamforth {
     target => "$dotfiles/.zshrc",
     ensure => 'link',
     require => Repository[$dotfiles]
+  }
+
+  # ZSH Plugins
+  $zpsyntaxhighlight = "$home/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+
+  file { $zpsyntaxhighlight: 
+    ensure => directory
+  }
+
+  repository { $zpsyntaxhighlight:
+    source => 'zsh-users/zsh-syntax-highlighting',
+    require => File[$zpsyntaxhighlight]
   }
 }
