@@ -80,6 +80,7 @@ node default {
   include dropbox
   include docker
   include elasticsearch
+  include enhancd
   include evernote
   include firefox
   include flux

@@ -1,7 +1,7 @@
 
 class people::kieran_bamforth {
 
-  $home     = "/Users/${::boxen_user}"
+  $home = "/Users/${::boxen_user}"
 
   # Dotfiles
   $dotfiles = "${home}/dotfiles"
