@@ -135,6 +135,7 @@ node default {
 
   include phpstorm
   include pkgconfig
+  include powerline
 
   python::version { '2.7.6': }
   python::package { 'awscli for 2.7.6':
