@@ -74,13 +74,11 @@ node default {
   include alfred
   include ansible
   include autoconf
-  include autojump
   include chrome
   # include dnsmasq
   include dropbox
   include docker
   include elasticsearch
-  include enhancd
   include evernote
   include firefox
   include flux
@@ -183,5 +181,6 @@ node default {
 
   include virtualbox
   include wget
+  include xfer
   include zsh
 }

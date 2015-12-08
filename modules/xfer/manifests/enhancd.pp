@@ -1,5 +1,4 @@
-class enhancd {
-
+class xfer::enhancd {
 	$home = "/Users/${::boxen_user}"
 
 	package { 'fzf':
