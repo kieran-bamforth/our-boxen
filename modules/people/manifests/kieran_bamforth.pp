@@ -1,2 +1,4 @@
 
-class people::kieran_bamforth {}
+class people::kieran_bamforth {
+	include projects::alcn
+}
