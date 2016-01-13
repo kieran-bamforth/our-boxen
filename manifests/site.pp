@@ -93,8 +93,8 @@ node default {
 
   include memcached
   include mysql
+  mysql::db {'datawarehouse':}
   mysql::db {'mydb':}
-  mysql::db {'mediatank-datawarehouse':}
   mysql::db {'mediatank-identity':}
   mysql::db {'mediatank-assets':}
   mysql::db {'wrapitin':}
