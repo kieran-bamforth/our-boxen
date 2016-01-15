@@ -104,6 +104,7 @@ node default {
   # include nginx
 
   nodejs::version { '0.12.0': }
+  nodejs::version { '0.10.0': }
   npm_module { "bower for 0.12": module => 'bower', version => '~> 1.4.1', node_version => '0.12.0' }
   npm_module { "yo for 0.12": module => 'yo', version => '~> 1.4.7', node_version => '0.12.0' }
   npm_module { "node inspector for 0.12": module => 'node-inspector', version => '~> 0.12.1', node_version => '0.12.0' }
