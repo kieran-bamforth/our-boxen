@@ -3,7 +3,7 @@
 class projects::flow {
 
     boxen::project { 'flow':
-        source => 'kieran-bamforth/flow'
+        source => 'https://kieran-bamforth@bitbucket.org/kieranbamforth/flow.git'
     }
     
 }

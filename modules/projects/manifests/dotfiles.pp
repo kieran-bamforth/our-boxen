@@ -2,12 +2,20 @@
 
 class projects::dotfiles {
 
+    $awsdir = "/Users/${::boxen_user}/.aws"
     $dotfiles = "dotfiles"
     $home = "/Users/${::boxen_user}"
     $dir = "${boxen::config::srcdir}/${dotfiles}"
 
+    #Presetup
+
+    file { "$awsdir":
+        ensure => 'directory'
+    }
+
     boxen::project { $dotfiles:
-        source => 'kieran-bamforth/dotfiles'
+        source => 'https://kieran-bamforth@bitbucket.org/kieranbamforth/dotfiles.git',
+        require => File[$awsdir]
     }
 
     # Dotfiles
@@ -26,6 +34,18 @@ class projects::dotfiles {
 
     file { "${home}/.zshrc":
         target => "${dir}/.zshrc",
+        ensure => 'link',
+        require => Boxen::Project[$dotfiles]
+    }
+
+    file { "${home}/.aws/config":
+        target => "${dir}/.aws/config",
+        ensure => 'link',
+        require => Boxen::Project[$dotfiles]
+    }
+
+    file { "${home}/.aws/credentials":
+        target => "${dir}/.aws/credentials",
         ensure => 'link',
         require => Boxen::Project[$dotfiles]
     }
