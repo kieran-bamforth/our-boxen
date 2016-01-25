@@ -78,7 +78,7 @@ node default {
   include chrome
   # include dnsmasq
   include dropbox
-  include docker
+  # include docker
   include elasticsearch
   include evernote
   include firefox
@@ -184,7 +184,10 @@ node default {
     'tpope/vim-fugitive'
   ]: }
 
-  include virtualbox
+  class { 'virtualbox':
+    version => '5.0.14',
+    patch_level => '105127'
+  }
   include wget
   include xfer
   include zsh
