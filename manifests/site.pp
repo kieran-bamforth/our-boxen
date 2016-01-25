@@ -74,6 +74,7 @@ node default {
   include alfred
   include ansible
   include autoconf
+  # include cachegrind
   include chrome
   # include dnsmasq
   include dropbox
@@ -144,6 +145,8 @@ node default {
     python => '2.7.6'
   }
   class { 'python::global': version => '2.7.6' }
+
+  # include::tunnelblick
 
   ruby::version { '2.0.0': }
   ruby::version { '2.1.0': }

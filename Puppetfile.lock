@@ -194,6 +194,11 @@ GITHUBTARBALL
     tmux (1.0.2)
 
 GITHUBTARBALL
+  remote: boxen/puppet-tunnelblick
+  specs:
+    tunnelblick (1.0.7)
+
+GITHUBTARBALL
   remote: boxen/puppet-vagrant
   specs:
     vagrant (3.3.1)
@@ -311,6 +316,7 @@ DEPENDENCIES
   sublime_text_3 (= 1.0.3)
   sudo (= 1.0.0)
   tmux (= 1.0.2)
+  tunnelblick (= 1.0.7)
   vagrant (= 3.3.1)
   vagrant_manager (= 0.0.1)
   vim (= 1.0.5)
