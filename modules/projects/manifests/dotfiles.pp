@@ -50,6 +50,12 @@ class projects::dotfiles {
         require => Boxen::Project[$dotfiles]
     }
 
+    file { "${home}/.ssh/config":
+        target => "${dir}/.ssh/config",
+        ensure => 'link',
+        require => Boxen::Project[$dotfiles]
+    }
+
     # Sublime
 
     require sublime_text_3::config
