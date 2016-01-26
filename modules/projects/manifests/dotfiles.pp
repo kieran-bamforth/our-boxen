@@ -3,14 +3,20 @@
 class projects::dotfiles {
 
     $awsdir = "/Users/${::boxen_user}/.aws"
+    $sshdir = "/Users/${::boxen_user}/.ssh"
     $dotfiles = "dotfiles"
     $home = "/Users/${::boxen_user}"
     $dir = "${boxen::config::srcdir}/${dotfiles}"
 
     #Presetup
 
-    file { "$awsdir":
+    file { "$sshdir":
         ensure => 'directory'
+    }
+
+    file { "$awsdir":
+        ensure => 'directory',
+        require => File[$sshdir]
     }
 
     boxen::project { $dotfiles:
@@ -34,6 +40,12 @@ class projects::dotfiles {
 
     file { "${home}/.zshrc":
         target => "${dir}/.zshrc",
+        ensure => 'link',
+        require => Boxen::Project[$dotfiles]
+    }
+
+    file { "${home}/.aws/aws_zsh_autocompleter.sh":
+        target => "${dir}/.aws/aws_zsh_autocompleter.sh",
         ensure => 'link',
         require => Boxen::Project[$dotfiles]
     }
