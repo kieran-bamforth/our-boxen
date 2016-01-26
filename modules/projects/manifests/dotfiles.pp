@@ -3,20 +3,14 @@
 class projects::dotfiles {
 
     $awsdir = "/Users/${::boxen_user}/.aws"
-    $sshdir = "/Users/${::boxen_user}/.ssh"
     $dotfiles = "dotfiles"
     $home = "/Users/${::boxen_user}"
     $dir = "${boxen::config::srcdir}/${dotfiles}"
 
     #Presetup
 
-    file { "$sshdir":
-        ensure => 'directory'
-    }
-
     file { "$awsdir":
-        ensure => 'directory',
-        require => File[$sshdir]
+        ensure => 'directory'
     }
 
     boxen::project { $dotfiles:
