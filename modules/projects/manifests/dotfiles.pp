@@ -2,77 +2,130 @@
 
 class projects::dotfiles {
 
-    $awsdir = "/Users/${::boxen_user}/.aws"
-    $dotfiles = "dotfiles"
-    $home = "/Users/${::boxen_user}"
-    $dir = "${boxen::config::srcdir}/${dotfiles}"
+    # Setup variables
 
-    #Presetup
+    $repoName = "dotfiles"
 
-    file { "$awsdir":
-        ensure => 'directory'
+    $dirHome = "/Users/${::boxen_user}"
+    $dirAws = "${dirHome}/.aws"
+    $dirSsh = "${dirHome}/.ssh"
+    $dirKeys = "${dirSsh}/keys"
+
+    $projectDir = "${boxen::config::srcdir}/${repoName}"
+    $projectDirAws = "${projectDir}/.aws"
+    $projectDirSsh = "${projectDir}/.ssh"
+    $projectDirKeys = "${projectDirSsh}/keys"
+
+    # Ensure target directories exist
+
+    file { "$dirAws":
+        ensure => 'directory',
+        before => Boxen::Project[$repoName]
+    }
+    file { "$dirSsh":
+        ensure => 'directory',
+        before => Boxen::Project[$repoName]
     }
 
-    boxen::project { $dotfiles:
-        source => 'https://kieran-bamforth@bitbucket.org/kieranbamforth/dotfiles.git',
-        require => File[$awsdir]
+    # Clone the project. Note the HTTPS method is used so that this project
+    # can be cloned without needing the required SSH BitBucket key.
+
+    boxen::project { $repoName:
+        source => "https://kieran-bamforth@bitbucket.org/kieranbamforth/${repoName}.git"
+    }
+
+    # AWS config
+
+    file { "${dirAws}/aws_zsh_autocompleter.sh":
+        target => "${projectDirAws}/aws_zsh_autocompleter.sh",
+        ensure => 'link',
+        require => Boxen::Project[$repoName]
+    }
+    file { "${dirAws}/config":
+        target => "${projectDirAws}/config",
+        ensure => 'link',
+        require => Boxen::Project[$repoName]
+    }
+    file { "${dirAws}/credentials":
+        target => "${projectDirAws}/credentials",
+        ensure => 'link',
+        require => Boxen::Project[$repoName]
+    }
+
+    # SSH config
+
+    file { "${dirSsh}/id_rsa":
+        target => "${projectDirKeys}/personal/kieranbamforth",
+        ensure => 'link',
+        require => Boxen::Project[$repoName]
+    }
+    file { "${dirSsh}/id_rsa.pub":
+        target => "${projectDirKeys}/personal/kieranbamforth.pub",
+        ensure => 'link',
+        require => Boxen::Project[$repoName]
+    }
+    file { "${dirSsh}/config":
+        target => "${projectDirSsh}/config",
+        ensure => 'link',
+        require => Boxen::Project[$repoName]
+    }
+    file { "${dirKeys}":
+        target => "${projectDirKeys}",
+        ensure => 'link',
+        require => Boxen::Project[$repoName]
     }
 
     # Dotfiles
 
-    file { "${home}/.tmux.conf":
-        target => "${dir}/.tmux.conf",
+    file { "${dirHome}/.tmux.conf":
+        target => "${projectDir}/.tmux.conf",
         ensure => 'link',
-        require => Boxen::Project[$dotfiles]
+        require => Boxen::Project[$repoName]
     }
-
-    file { "${home}/.vimrc":
-        target => "${dir}/.vimrc",
+    file { "${dirHome}/.vimrc":
+        target => "${projectDir}/.vimrc",
         ensure => 'link',
-        require => Boxen::Project[$dotfiles]
+        require => Boxen::Project[$repoName]
     }
-
-    file { "${home}/.zshrc":
-        target => "${dir}/.zshrc",
+    file { "${dirHome}/.zshrc":
+        target => "${projectDir}/.zshrc",
         ensure => 'link',
-        require => Boxen::Project[$dotfiles]
-    }
-
-    file { "${home}/.aws/aws_zsh_autocompleter.sh":
-        target => "${dir}/.aws/aws_zsh_autocompleter.sh",
-        ensure => 'link',
-        require => Boxen::Project[$dotfiles]
-    }
-
-    file { "${home}/.aws/config":
-        target => "${dir}/.aws/config",
-        ensure => 'link',
-        require => Boxen::Project[$dotfiles]
-    }
-
-    file { "${home}/.aws/credentials":
-        target => "${dir}/.aws/credentials",
-        ensure => 'link',
-        require => Boxen::Project[$dotfiles]
-    }
-
-    file { "${home}/.ssh/config":
-        target => "${dir}/.ssh/config",
-        ensure => 'link',
-        require => Boxen::Project[$dotfiles]
+        require => Boxen::Project[$repoName]
     }
 
     # Sublime
 
     require sublime_text_3::config
-
     file { "${sublime_text_3::config::user_packages_dir}/Preferences.sublime-settings":
-        target => "${dir}/Preferences.sublime-settings",
+        target => "${projectDir}/Preferences.sublime-settings",
         ensure => 'link',
         require => File[
             $sublime_text_3::config::dir,
             $sublime_text_3::config::packages_dir,
             $sublime_text_3::config::installed_packages_dir
         ]
+    }
+
+    # Fix the keys permissions
+
+    file { "${projectDirKeys}/bitbucket/bitbucket-kieran-bamforth":
+        mode => "400",
+        require => Boxen::Project[$repoName]
+    }
+    file { "${projectDirKeys}/github/github-kieran-bamforth":
+        mode => "400",
+        require => Boxen::Project[$repoName]
+    }
+    file { "${projectDirKeys}/personal/kieranbamforth":
+        mode => "400",
+        require => Boxen::Project[$repoName]
+    }
+    file { "${projectDirKeys}/personal/kieranbamforth.pub":
+        mode => "400",
+        require => Boxen::Project[$repoName]
+    }
+    file { "${projectDirKeys}/personal/jenkins":
+        mode => "400",
+        require => Boxen::Project[$repoName]
     }
 }

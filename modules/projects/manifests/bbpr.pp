@@ -1,8 +1,8 @@
 # Project Manifests
 
-class projects::flow {
+class projects::bbpr {
 	require projects::dotfiles
-	$repoName = "flow"
+	$repoName = "bbpr"
 	boxen::project { "${repoName}":
 		source => "git@bitbucket.org:kieranbamforth/${repoName}.git"
 	}

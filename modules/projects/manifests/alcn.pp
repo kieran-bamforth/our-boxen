@@ -1,7 +1,9 @@
 # Project Manifests
 
 class projects::alcn {
-	boxen::project { 'alcn':
-		source => 'https://kieran-bamforth@bitbucket.org/kieranbamforth/alcn.git'
+	require projects::dotfiles
+	$repoName = "alcn"
+	boxen::project { "${repoName}":
+		source => "git@bitbucket.org:kieranbamforth/${repoName}.git"
 	}
 }
