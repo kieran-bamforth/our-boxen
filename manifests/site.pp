@@ -94,6 +94,7 @@ node default {
 
   include memcached
   include mysql
+  mysql::db {'irkb':}
   mysql::db {'datawarehouse':}
   mysql::db {'mydb':}
   mysql::db {'mediatank-identity':}
