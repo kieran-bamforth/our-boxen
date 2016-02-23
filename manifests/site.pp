@@ -116,6 +116,7 @@ node default {
   npm_module { "ract-native-cli for 0.12": module => 'react-native-cli', version => '~> 0.1.4', node_version => '0.12.0' }
   npm_module { "tern for 0.12": module => 'tern', version => '~> 0.16.0', node_version => '0.12.0' }
   npm_module { "diff-so-fancy for 0.12": module => 'diff-so-fancy', version => '~> 0.1.2', node_version => '0.12.0' }
+  npm_module { "phonegap 0.12": module => 'phonegap', version => '~> 6.0.0', node_version => '0.12.0' }
   class { 'nodejs::global': version => '0.12.0' }
 
   include osx::disable_app_quarantine
