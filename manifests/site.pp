@@ -86,14 +86,13 @@ node default {
   include git
   include gitx
   include hub
-  include iterm2::colors::solarized_dark
-  include iterm2::stable
   include java
   include libpng
   include libtool
 
   include memcached
   include mysql
+  include myterminal
   include myvim
   mysql::db {'irkb':}
   mysql::db {'datawarehouse':}
@@ -141,7 +140,6 @@ node default {
 
   include phpstorm
   include pkgconfig
-  include powerline
 
   python::version { '2.7.6': }
   python::package { 'awscli for 2.7.6':
@@ -170,8 +168,6 @@ node default {
   sublime_text_3::package { 'sublime-tmux-syntax-highlight': source => 'keqh/sublime-tmux-syntax-highlight' }
   sublime_text_3::package { 'tern-meteor-sublime': source => 'Slava/tern-meteor-sublime' }
   sublime_text_3::package { 'TrailingSpaces': source => 'SublimeText/TrailingSpaces' }
-
-  include tmux
   
   class { 'vagrant': completion => true }
   include vagrant_manager
@@ -181,6 +177,4 @@ node default {
     patch_level => '105127'
   }
   include wget
-  include xfer
-  include zsh
 }

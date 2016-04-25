@@ -1,4 +1,4 @@
-class xfer::tree {
+class myterminal::tree {
     package { 'tree':
       ensure => present
     }

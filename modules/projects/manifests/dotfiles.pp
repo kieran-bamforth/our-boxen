@@ -7,6 +7,7 @@ class projects::dotfiles {
     $repoName = "dotfiles"
 
     $dirHome = "/Users/${::boxen_user}"
+    $dirPreferences = "${dirHome}/Library/Preferences"
     $dirAws = "${dirHome}/.aws"
     $dirSsh = "${dirHome}/.ssh"
     $dirKeys = "${dirSsh}/keys"
@@ -109,6 +110,14 @@ class projects::dotfiles {
             $sublime_text_3::config::packages_dir,
             $sublime_text_3::config::installed_packages_dir
         ]
+    }
+
+    # iTerm2
+
+    file { "${dirPreferences}/com.google.iterm2.plist":
+        target => "${projectDir}/com.google.iterm2.plist",
+        ensure => 'link',
+        require => Boxen::Project[$repoName]
     }
 
     # Fix the keys permissions

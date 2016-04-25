@@ -1,4 +1,4 @@
-class xfer::autojump {
+class myterminal::autojump {
     package { 'autojump':
       ensure => present
     }
