@@ -66,115 +66,33 @@ node default {
     target => $boxen::config::repodir
   }
 
-  file { '/usr/local/bin/subl':
-     ensure => 'link',
-     target => '/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl',
-  }
-
-  include alfred
   include ansible
   include autoconf
   # include cachegrind
-  include chrome
   # include dnsmasq
-  include dropbox
   # include docker
-  include elasticsearch
-  include evernote
-  include firefox
-  include flux
+  # include elasticsearch
   include git
   include gitx
   include hub
   include java
   include libpng
   include libtool
-
   include memcached
-  include mysql
+  # include nginx
+  include pcre
+  include pkgconfig
+  # include::tunnelblick
+  include wget
+
+  include myapps
+  include mymysql
+  include mynodejs
+  include myosx
+  include myphp
+  include mypython
+  include myruby
+  include mysublimetext
   include myterminal
   include myvim
-  mysql::db {'irkb':}
-  mysql::db {'datawarehouse':}
-  mysql::db {'mydb':}
-  mysql::db {'mediatank-identity':}
-  mysql::db {'mediatank-assets':}
-  mysql::db {'wrapitin':}
-  mysql::db {'es6_example':}
-  mysql::db {'skylab_website':}
-  mysql::db {'swimming':}
-  # include nginx
-
-  nodejs::version { '0.12.0': }
-  nodejs::version { '0.10.0': }
-  npm_module { "bower for 0.12": module => 'bower', version => '~> 1.4.1', node_version => '0.12.0' }
-  npm_module { "yo for 0.12": module => 'yo', version => '~> 1.4.7', node_version => '0.12.0' }
-  npm_module { "node inspector for 0.12": module => 'node-inspector', version => '~> 0.12.1', node_version => '0.12.0' }
-  npm_module { "git commander for 0.12": module => 'git-commander', version => '~> 0.0.12', node_version => '0.12.0' }
-  npm_module { "grunt for 0.12": module => 'grunt', version => '~> 0.4.5', node_version => '0.12.0' }
-  npm_module { "grunt-cli for 0.12": module => 'grunt-cli', version => '~> 0.1.13', node_version => '0.12.0' }
-  npm_module { "ract-native-cli for 0.12": module => 'react-native-cli', version => '~> 0.1.4', node_version => '0.12.0' }
-  npm_module { "tern for 0.12": module => 'tern', version => '~> 0.16.0', node_version => '0.12.0' }
-  npm_module { "diff-so-fancy for 0.12": module => 'diff-so-fancy', version => '~> 0.1.2', node_version => '0.12.0' }
-  npm_module { "phonegap 0.12": module => 'phonegap', version => '~> 6.0.0', node_version => '0.12.0' }
-  class { 'nodejs::global': version => '0.12.0' }
-
-  include osx::disable_app_quarantine
-  include osx::dock::clear_dock
-  include osx::finder::unhide_library
-  include osx::global::disable_key_press_and_hold
-  include osx::global::enable_keyboard_control_access
-  include osx::global::enable_standard_function_keys
-  include osx::global::expand_print_dialog
-  include osx::global::expand_save_dialog
-  include osx::software_update
-  class { 'osx::dock::position': position => 'left'}
-  class { 'osx::dock::icon_size': size => 36}
-
-  include pcre
-
-  class { 'php::global': version => '5.6.9'}
-  include php::composer
-  php::extension::intl { 'intl for 5.6.9': php => '5.6.9', version => '3.0.0'}
-  php::extension::xdebug { 'xdebug for 5.6.9': php => '5.6.9', version => '2.3.2' }
-
-  include phpstorm
-  include pkgconfig
-
-  python::version { '2.7.6': }
-  python::package { 'awscli for 2.7.6':
-    package => 'awscli',
-    python => '2.7.6'
-  }
-  class { 'python::global': version => '2.7.6' }
-
-  # include::tunnelblick
-
-  ruby::version { '2.0.0': }
-  ruby::version { '2.1.0': }
-
-  include sequel_pro
-  include skype
-  include spotify
-
-  include sublime_text_3
-  include sublime_text_3::package_control
-  sublime_text_3::package { 'BracketHighlighter': source => 'facelessuser/BracketHighlighter' }
-  sublime_text_3::package { 'dotfiles-syntax-highlighting-st2': source => 'mattbanks/dotfiles-syntax-highlighting-st2' }
-  sublime_text_3::package { 'emmet-sublime': source => 'sergeche/emmet-sublime' }
-  sublime_text_3::package { 'Material Theme': source => 'equinusocio/material-theme' }
-  sublime_text_3::package { 'Sublime-HTMLPrettify': source => 'victorporof/Sublime-HTMLPrettify'}
-  sublime_text_3::package { 'sublime-text-puppet': source => 'eklein/sublime-text-puppet' }
-  sublime_text_3::package { 'sublime-tmux-syntax-highlight': source => 'keqh/sublime-tmux-syntax-highlight' }
-  sublime_text_3::package { 'tern-meteor-sublime': source => 'Slava/tern-meteor-sublime' }
-  sublime_text_3::package { 'TrailingSpaces': source => 'SublimeText/TrailingSpaces' }
-  
-  class { 'vagrant': completion => true }
-  include vagrant_manager
-
-  class { 'virtualbox':
-    version => '5.0.14',
-    patch_level => '105127'
-  }
-  include wget
 }
