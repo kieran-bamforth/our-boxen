@@ -179,6 +179,7 @@ node default {
   vim::bundle { [
     'altercation/vim-colors-solarized',
     'elzr/vim-json',
+    'joonty/vdebug',
     'Lokaltog/vim-easymotion',
     'scrooloose/nerdtree',
     'scrooloose/syntastic',
