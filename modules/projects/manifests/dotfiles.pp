@@ -77,6 +77,11 @@ class projects::dotfiles {
 
     # Dotfiles
 
+    file { "${dirHome}/.fzf.zsh":
+        target => "${projectDir}/.fzf.zsh",
+        ensure => 'link',
+        require => Boxen::Project[$repoName]
+    }
     file { "${dirHome}/.tmux.conf":
         target => "${projectDir}/.tmux.conf",
         ensure => 'link',
