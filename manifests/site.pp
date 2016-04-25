@@ -94,6 +94,7 @@ node default {
 
   include memcached
   include mysql
+  include myvim
   mysql::db {'irkb':}
   mysql::db {'datawarehouse':}
   mysql::db {'mydb':}
@@ -174,19 +175,6 @@ node default {
   
   class { 'vagrant': completion => true }
   include vagrant_manager
-
-  include vim
-  vim::bundle { [
-    'altercation/vim-colors-solarized',
-    'elzr/vim-json',
-    'joonty/vdebug',
-    'Lokaltog/vim-easymotion',
-    'scrooloose/nerdtree',
-    'scrooloose/syntastic',
-    'sjl/gundo.vim',
-    'tpope/vim-commentary',
-    'tpope/vim-fugitive'
-  ]: }
 
   class { 'virtualbox':
     version => '5.0.14',
