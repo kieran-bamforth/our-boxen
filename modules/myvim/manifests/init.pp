@@ -1,5 +1,5 @@
 class myvim {
-	include vim
+	include macvim
 	vim::bundle { [
 		'altercation/vim-colors-solarized',
 		'elzr/vim-json',
@@ -10,6 +10,7 @@ class myvim {
 		'sjl/gundo.vim',
 		'tpope/vim-commentary',
 		'tpope/vim-fugitive',
-		'tpope/vim-sensible'
+		'tpope/vim-sensible',
+		'tpope/vim-surround'
 	]: }
 }
