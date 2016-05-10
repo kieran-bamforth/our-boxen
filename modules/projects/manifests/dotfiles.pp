@@ -114,8 +114,8 @@ class projects::dotfiles {
 
     # iTerm2
 
-    file { "${dirPreferences}/com.google.iterm2.plist":
-        target => "${projectDir}/com.google.iterm2.plist",
+    file { "${dirPreferences}/com.googlecode.iterm2.plist":
+        target => "${projectDir}/com.googlecode.iterm2.plist",
         ensure => 'link',
         require => Boxen::Project[$repoName]
     }
