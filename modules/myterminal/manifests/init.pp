@@ -10,7 +10,6 @@ class myterminal {
     include myterminal::enhancd
     include myterminal::fzf
     include myterminal::powerline
-    include myterminal::syntaxhighlighting
 	include myterminal::tpm
     include myterminal::tree
 }
