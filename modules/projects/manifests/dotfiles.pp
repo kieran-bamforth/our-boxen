@@ -9,6 +9,7 @@ class projects::dotfiles {
     $dirHome = "/Users/${::boxen_user}"
     $dirPreferences = "${dirHome}/Library/Preferences"
     $dirAws = "${dirHome}/.aws"
+    $dirConfig = "${dirHome}/.config"
     $dirSsh = "${dirHome}/.ssh"
     $dirKeys = "${dirSsh}/keys"
 
@@ -20,6 +21,10 @@ class projects::dotfiles {
     # Ensure target directories exist
 
     file { "$dirAws":
+        ensure => 'directory',
+        before => Boxen::Project[$repoName]
+    }
+    file { "$dirConfig":
         ensure => 'directory',
         before => Boxen::Project[$repoName]
     }
@@ -76,7 +81,15 @@ class projects::dotfiles {
         require => Boxen::Project[$repoName]
     }
 
-    # Dotfiles
+    # Powerline
+
+    file { "${dirConfig}/powerline":
+        target => "${projectDir}/.config/powerline",
+        ensure => 'link',
+        require => Boxen::Project[$repoName]
+    }
+	
+	# Dotfiles
 
     file { "${dirHome}/.fzf.zsh":
         target => "${projectDir}/.fzf.zsh",

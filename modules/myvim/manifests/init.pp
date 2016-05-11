@@ -4,6 +4,7 @@ class myvim {
 		'altercation/vim-colors-solarized',
 		'elzr/vim-json',
 		'joonty/vdebug',
+		'kshenoy/vim-signature',
 		'Lokaltog/vim-easymotion',
 		'scrooloose/nerdtree',
 		'scrooloose/syntastic',
