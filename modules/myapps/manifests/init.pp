@@ -12,7 +12,7 @@ class myapps {
 	class { 'vagrant': completion => true }
 
 	class { 'virtualbox':
-		version => '5.0.14',
-		patch_level => '105127'
+		version => '5.0.20',
+		patch_level => '106931'
 	}
 }
