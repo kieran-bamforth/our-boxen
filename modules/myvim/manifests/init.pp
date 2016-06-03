@@ -4,6 +4,7 @@ class myvim {
     'airblade/vim-gitgutter',
     'altercation/vim-colors-solarized',
     'ekalinin/Dockerfile.vim',
+    'beyondwords/vim-twig',
     'elzr/vim-json',
     'joonty/vdebug',
     'kieran-bamforth/vim-phpunit',
