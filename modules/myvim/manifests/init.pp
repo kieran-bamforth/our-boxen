@@ -1,6 +1,7 @@
 class myvim {
   include macvim
   vim::bundle { [
+    'airblade/vim-gitgutter',
     'altercation/vim-colors-solarized',
     'ekalinin/Dockerfile.vim',
     'elzr/vim-json',
@@ -12,11 +13,13 @@ class myvim {
     'scrooloose/nerdtree',
     'scrooloose/syntastic',
     'sjl/gundo.vim',
+    'tmux-plugins/vim-tmux-focus-events.git',
     'tpope/vim-commentary',
     'tpope/vim-dispatch',
     'tpope/vim-fugitive',
     'tpope/vim-sensible',
     'tpope/vim-surround',
-    'Valloric/YouCompleteMe'
+    'Valloric/YouCompleteMe',
+    'vim-scripts/nginx.vim'
   ]: }
 }
