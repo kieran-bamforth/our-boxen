@@ -1,5 +1,6 @@
 class myvim {
   include macvim
+  include vimtmuxnavigator
   vim::bundle { [
     'airblade/vim-gitgutter',
     'altercation/vim-colors-solarized',
@@ -10,6 +11,7 @@ class myvim {
     'kieran-bamforth/vim-phpunit',
     'kshenoy/vim-signature',
     'Lokaltog/vim-easymotion',
+    'mattn/emmet-vim',
     'rodjek/vim-puppet',
     'scrooloose/nerdtree',
     'scrooloose/syntastic',
