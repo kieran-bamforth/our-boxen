@@ -1,5 +1,5 @@
 class myterminal::autojump {
-    package { 'autojump':
-      ensure => present
-    }
+  package { 'autojump':
+    ensure => present
+  }
 }

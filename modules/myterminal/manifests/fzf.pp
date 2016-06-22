@@ -1,5 +1,5 @@
 class myterminal::fzf {
-	package { 'fzf':
-		ensure => present
-	}
+  package { 'fzf':
+    ensure => present
+  }
 }
