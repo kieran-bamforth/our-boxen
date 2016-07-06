@@ -10,6 +10,7 @@ class myterminal {
     include myterminal::dockercompletion
     include myterminal::enhancd
     include myterminal::fzf
+    include myterminal::jq
     include myterminal::powerline
     include myterminal::tpm
     include myterminal::tree
