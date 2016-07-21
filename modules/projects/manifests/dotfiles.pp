@@ -52,11 +52,6 @@ class projects::dotfiles {
         ensure => 'link',
         require => Boxen::Project[$repoName]
     }
-    file { "${dirAws}/credentials":
-        target => "${projectDirAws}/credentials",
-        ensure => 'link',
-        require => Boxen::Project[$repoName]
-    }
 
     # SSH config
 
