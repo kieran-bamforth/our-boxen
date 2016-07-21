@@ -7,6 +7,7 @@ class myterminal {
 
     include myterminal::autojump
     include myterminal::autosuggestions
+    include myterminal::ctags
     include myterminal::dockercompletion
     include myterminal::enhancd
     include myterminal::fzf
