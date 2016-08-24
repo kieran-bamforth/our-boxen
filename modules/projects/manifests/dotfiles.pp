@@ -86,6 +86,11 @@ class projects::dotfiles {
 	
 	# Dotfiles
 
+    file { "${dirHome}/.gitconfig":
+        target => "${projectDir}/.gitconfig",
+        ensure => 'link',
+        require => Boxen::Project[$repoName]
+    }
     file { "${dirHome}/.fzf.zsh":
         target => "${projectDir}/.fzf.zsh",
         ensure => 'link',
