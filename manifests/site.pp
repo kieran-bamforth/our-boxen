@@ -74,6 +74,7 @@ node default {
   # include elasticsearch
   include git
   include gitx
+  include gradle
   include hub
   include java
   include libpng
