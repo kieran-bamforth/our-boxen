@@ -81,6 +81,7 @@ node default {
   include libtool
   include lua
   include memcached
+  include mjolnir
   # include nginx
   include pcre
   include pkgconfig

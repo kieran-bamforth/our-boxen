@@ -10,11 +10,13 @@ class projects::dotfiles {
     $dirPreferences = "${dirHome}/Library/Preferences"
     $dirAws = "${dirHome}/.aws"
     $dirConfig = "${dirHome}/.config"
+    $dirMjolnir = "${dirHome}/.mjolnir"
     $dirSsh = "${dirHome}/.ssh"
     $dirKeys = "${dirSsh}/keys"
 
     $projectDir = "${boxen::config::srcdir}/${repoName}"
     $projectDirAws = "${projectDir}/.aws"
+    $projectDirMjolnir = "${projectDir}/.mjolnir"
     $projectDirSsh = "${projectDir}/.ssh"
     $projectDirKeys = "${projectDirSsh}/keys"
 
@@ -49,6 +51,14 @@ class projects::dotfiles {
     }
     file { "${dirAws}/config":
         target => "${projectDirAws}/config",
+        ensure => 'link',
+        require => Boxen::Project[$repoName]
+    }
+
+    # Mjolnir config
+
+    file { "${dirMjolnir}":
+        target => "${projectDirMjolnir}",
         ensure => 'link',
         require => Boxen::Project[$repoName]
     }
