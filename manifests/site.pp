@@ -79,6 +79,7 @@ node default {
   include java
   include libpng
   include libtool
+  include lua
   include memcached
   # include nginx
   include pcre
