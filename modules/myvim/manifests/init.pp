@@ -22,6 +22,7 @@ class myvim {
     'tpope/vim-fugitive',
     'tpope/vim-sensible',
     'tpope/vim-surround',
+    'tpope/vim-unimpaired.git',
     'Valloric/YouCompleteMe',
     'vim-scripts/nginx.vim'
   ]: }
