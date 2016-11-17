@@ -16,6 +16,7 @@ class myvim {
     'scrooloose/nerdtree',
     'scrooloose/syntastic',
     'sjl/gundo.vim',
+    'shawncplus/phpcomplete.vim',
     'tmux-plugins/vim-tmux-focus-events.git',
     'tpope/vim-commentary',
     'tpope/vim-dispatch',
