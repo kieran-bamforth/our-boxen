@@ -12,6 +12,13 @@ class projects::infrastructureca {
     require => Boxen::Project[$repoName]
   }
 
+  mydocker::installnode { 'single-swarm-master':
+    hostname => "single-master.docker-swarm.kieranbamforth.me",
+    dir => "${projectDir}/docker-nodes",
+    cafile => "${dirCa}",
+    require => Boxen::Project[$repoName]
+  }
+
 	boxen::project { $repoName:
 		source => "git@bitbucket.org:kieranbamforth/${repoName}.git"
 	}
