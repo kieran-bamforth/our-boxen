@@ -25,6 +25,8 @@ class myvim {
     'tpope/vim-surround',
     'tpope/vim-unimpaired.git',
     'Valloric/YouCompleteMe',
-    'vim-scripts/nginx.vim'
+    'vim-scripts/nginx.vim',
+    'xolox/vim-easytags',
+    'xolox/vim-misc'
   ]: }
 }
