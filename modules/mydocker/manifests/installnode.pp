@@ -1,6 +1,7 @@
 define mydocker::installnode(
   $client,
-  $hostname
+  $hostname,
+  $port = 2376
 ) {
   require mydocker::config
 

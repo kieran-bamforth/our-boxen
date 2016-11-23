@@ -23,6 +23,13 @@ class projects::infrastructureca {
     require => Boxen::Project[$repoName]
   }
 
+  mydocker::installnode { 'swarm-single-swarm-master':
+    client => 'client',
+    hostname => "single-master.docker-swarm.kieranbamforth.me",
+    port => 3376,
+    require => Boxen::Project[$repoName]
+  }
+
   boxen::project { $repoName:
     source => "git@bitbucket.org:kieranbamforth/${repoName}.git"
   }
