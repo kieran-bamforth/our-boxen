@@ -17,15 +17,15 @@ class projects::infrastructureca {
     require => Boxen::Project[$repoName]
   }
 
-  mydocker::installnode { 'single-swarm-master':
+  mydocker::installnode { 'single-swarm-manager':
     client => 'client',
-    hostname => "single-master.docker-swarm.kieranbamforth.me",
+    hostname => "single-manager.docker-swarm.kieranbamforth.me",
     require => Boxen::Project[$repoName]
   }
 
-  mydocker::installnode { 'swarm-single-swarm-master':
+  mydocker::installnode { 'swarm-single-swarm-manager':
     client => 'client',
-    hostname => "single-master.docker-swarm.kieranbamforth.me",
+    hostname => "single-manager.docker-swarm.kieranbamforth.me",
     port => 3376,
     require => Boxen::Project[$repoName]
   }
